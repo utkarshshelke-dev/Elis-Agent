@@ -1,0 +1,30 @@
+# ── Core Agent Framework ────────────────────────────────────────────────────
+google-cloud-aiplatform[agent_engines,adk]
+google-adk
+google-genai
+vertexai
+
+# ── Web Framework ────────────────────────────────────────────────────────────
+fastapi
+uvicorn[standard]
+
+# ── Database ─────────────────────────────────────────────────────────────────
+psycopg2-binary
+sqlalchemy
+
+# ── Config & Validation ──────────────────────────────────────────────────────
+pydantic
+pydantic-settings
+python-dotenv
+
+# ── Observability ────────────────────────────────────────────────────────────
+opentelemetry-api
+opentelemetry-sdk
+opentelemetry-exporter-gcp-trace
+opentelemetry-instrumentation-google-genai
+
+# ── Testing ──────────────────────────────────────────────────────────────────
+pytest>=7.0
+pytest-asyncio
+pytest-bdd
+pytest-mock
