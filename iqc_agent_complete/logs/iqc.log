@@ -1,0 +1,87 @@
+2026-03-11 16:10:34 | ERROR    | google_adk.google.adk.cli.adk_web_server | event_generator              | Error in event_generator: No API key was provided. Please pass a valid API key. Learn how to create an API key at https://ai.google.dev/gemini-api/docs/api-key.
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\google\adk\cli\adk_web_server.py", line 1616, in event_generator
+    async for event in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\runners.py", line 565, in run_async
+    async for event in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\runners.py", line 550, in _run_with_trace
+    async for event in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\runners.py", line 782, in _exec_with_plugin
+    async for event in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\runners.py", line 539, in execute
+    async for event in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\agents\base_agent.py", line 295, in run_async
+    async for event in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\agents\llm_agent.py", line 470, in _run_async_impl
+    async for event in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 752, in run_async
+    async for event in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 829, in _run_one_step_async
+    async for llm_response in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1186, in _call_llm_async
+    async for event in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1169, in _call_llm_with_tracing
+    async for llm_response in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1245, in _run_and_handle_error
+    async for response in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 389, in _run_and_handle_error
+    raise model_error
+  File "D:\Anaconda\lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 374, in _run_and_handle_error
+    async for llm_response in agen:
+  File "D:\Anaconda\lib\site-packages\google\adk\models\google_llm.py", line 165, in generate_content_async
+    await self._preprocess_request(llm_request)
+  File "D:\Anaconda\lib\site-packages\google\adk\models\google_llm.py", line 432, in _preprocess_request
+    if self._api_backend == GoogleLLMVariant.GEMINI_API:
+  File "D:\Anaconda\lib\functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "D:\Anaconda\lib\site-packages\google\adk\models\google_llm.py", line 319, in _api_backend
+    if self.api_client.vertexai
+  File "D:\Anaconda\lib\functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "D:\Anaconda\lib\site-packages\google\adk\models\google_llm.py", line 307, in api_client
+    return Client(
+  File "D:\Anaconda\lib\site-packages\google\genai\client.py", line 426, in __init__
+    self._api_client = self._get_api_client(
+  File "D:\Anaconda\lib\site-packages\google\genai\client.py", line 474, in _get_api_client
+    return BaseApiClient(
+  File "D:\Anaconda\lib\site-packages\google\genai\_api_client.py", line 706, in __init__
+    raise ValueError(
+ValueError: No API key was provided. Please pass a valid API key. Learn how to create an API key at https://ai.google.dev/gemini-api/docs/api-key.
+2026-03-11 16:10:34 | ERROR    | asyncio                        | default_exception_handler    | Task exception was never retrieved
+future: <Task finished name='Task-20' coro=<BaseApiClient.aclose() done, defined at D:\Anaconda\lib\site-packages\google\genai\_api_client.py:1915> exception=AttributeError("'BaseApiClient' object has no attribute '_async_httpx_client'")>
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\google\genai\_api_client.py", line 1920, in aclose
+    await self._async_httpx_client.aclose()
+AttributeError: 'BaseApiClient' object has no attribute '_async_httpx_client'
+2026-03-11 16:12:10 | INFO     | google_adk.google.adk.runners  | close                        | Closing runner...
+2026-03-11 16:12:10 | INFO     | google_adk.google.adk.runners  | close                        | Runner closed.
+2026-03-11 16:12:26 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Sending out request, model: gemini-2.0-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-03-11 16:12:36 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Response received from the model.
+2026-03-11 16:12:36 | WARNING  | google_genai.types             | _get_text                    | Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.
+2026-03-11 16:12:38 | ERROR    | data.repository                | get_basic_profile            | get_basic_profile | FAILED | user=hello | invalid input syntax for type uuid: "hello"
+LINE 3:                 FROM basic_profiles WHERE id = 'hello' LIMIT...
+                                                       ^
+
+2026-03-11 16:12:39 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Sending out request, model: gemini-2.0-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-03-11 16:12:43 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Response received from the model.
+2026-03-11 16:15:31 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Sending out request, model: gemini-2.0-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-03-11 16:15:36 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Response received from the model.
+2026-03-11 16:15:40 | INFO     | iqc_agent                      | check_user                   | check_user | user=05748f13-b666-4ed9-a49c-33f147ff5ea2 | role=investor | sid=96bd035b
+2026-03-11 16:15:41 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Sending out request, model: gemini-2.0-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-03-11 16:15:43 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Response received from the model.
+2026-03-11 16:15:46 | INFO     | iqc_agent                      | load_investor_profile        | load_investor_profile | user=05748f13-b666-4ed9-a49c-33f147ff5ea2 | filled=3 | missing=7
+2026-03-11 16:15:47 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Sending out request, model: gemini-2.0-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-03-11 16:15:51 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Response received from the model.
+2026-03-11 16:15:53 | INFO     | iqc_agent                      | score_profile_tool           | score_profile_tool | user=05748f13-b666-4ed9-a49c-33f147ff5ea2 | score=30% | qualified=False | missing=7
+2026-03-11 16:15:54 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Sending out request, model: gemini-2.0-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-03-11 16:15:58 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Response received from the model.
+2026-03-11 16:16:16 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Sending out request, model: gemini-2.0-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-03-11 16:16:19 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Response received from the model.
+2026-03-11 16:16:19 | INFO     | iqc_agent                      | extract_fields_from_message  | extract_fields_from_message | found=['stage_focus']
+2026-03-11 16:16:20 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Sending out request, model: gemini-2.0-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-03-11 16:16:24 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Response received from the model.
+2026-03-11 16:16:26 | INFO     | iqc_agent                      | score_profile_tool           | score_profile_tool | user=05748f13-b666-4ed9-a49c-33f147ff5ea2 | score=40% | qualified=False | missing=6
+2026-03-11 16:16:27 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Sending out request, model: gemini-2.0-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-03-11 16:16:31 | INFO     | google_adk.google.adk.models.google_llm | generate_content_async       | Response received from the model.
+2026-03-11 16:18:54 | INFO     | google_adk.google.adk.runners  | close                        | Closing runner...
+2026-03-11 16:18:54 | INFO     | google_adk.google.adk.runners  | close                        | Runner closed.
